@@ -54,11 +54,6 @@ public class KvServerApplication {
     public static void main(String[] args) throws Exception {
         int serverPort = 9090;
 
-//        @Value("${db.host}")
-//        String serverHost;
-//
-//        @Value("${db.port}")
-//        int dbPort;
 
         TarantoolBoxClient client =
                 TarantoolClientProvider.create("localhost", 3301, "app", "app");
