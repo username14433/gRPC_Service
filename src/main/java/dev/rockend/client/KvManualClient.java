@@ -139,6 +139,7 @@ public class KvManualClient {
     }
 
     private static void checkCount(KvServiceGrpc.KvServiceBlockingStub stub) {
+        System.out.println("\n=== Check COUNT method ===");
 
         CountResponse countBefore = stub.count(CountRequest.newBuilder().build());
         System.out.println("count before = " + countBefore.getCount());
@@ -167,6 +168,8 @@ public class KvManualClient {
     }
 
     public static void checkRange(KvServiceGrpc.KvServiceBlockingStub stub) {
+        System.out.println("\n=== Check RANGE method ===");
+
         stub.put(PutRequest.newBuilder().setKey("a").build());
         stub.put(PutRequest.newBuilder().setKey("b").setValue(ByteString.copyFromUtf8("hello")).build());
         stub.put(PutRequest.newBuilder().setKey("c").setValue(ByteString.EMPTY).build());
